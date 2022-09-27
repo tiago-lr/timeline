@@ -2,6 +2,7 @@
 
 This project is a bit of myself.
 "The most precious asset we have is time. When this comes to an end, everything ends with it."
+"We've reached the end of our line when we run out of time."
 
 ## Available Scripts
 
