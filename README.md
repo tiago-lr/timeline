@@ -1,6 +1,7 @@
 # Github profiles
 
-This project is a bit of myself
+This project is a bit of myself.
+"The most precious asset we have is time. When this comes to an end, everything ends with it."
 
 ## Available Scripts
 
