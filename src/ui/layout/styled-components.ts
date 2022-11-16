@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import { DEVICE_SIZE } from "../../utils/constants/ui";
 
 export const Wrapper = styled.div`
+  position: relative;
+  overflow: hidden;
   margin: auto;
   height: 100vh;
-  max-width: 2048px;
-  min-width: 320px;
+  max-width: ${DEVICE_SIZE.desktop.max};
+  min-width: ${DEVICE_SIZE.mobile.min};
   display: flex;
   flex-flow: row nowrap;
 
@@ -31,13 +34,30 @@ export const Wrapper = styled.div`
         z-index: 5;
     }
 `};
+
+  @media (max-width: ${DEVICE_SIZE.mobile.max}) {
+    flex-flow: column nowrap;
+  }
 `;
 
-export const Aside = styled.aside`
+export const Section = styled.section`
   flex: 0 0 auto;
   width: 128px;
   background: lightgray;
   border: 2px solid black;
+
+  @media (max-width: ${DEVICE_SIZE.tablet.max}) and (min-width: ${DEVICE_SIZE
+      .tablet.min}) {
+    width: 80px;
+  }
+  @media (max-width: ${DEVICE_SIZE.phablet.max}) and (min-width: ${DEVICE_SIZE
+      .phablet.min}) {
+    width: 60px;
+  }
+  @media (max-width: ${DEVICE_SIZE.mobile.max}) {
+    width: 100%;
+    height: 60px;
+  }
 `;
 
 export const Main = styled.main`
@@ -59,4 +79,24 @@ export const Header = styled.header`
   border: 2px solid black;
 `;
 
-export const Menu = styled.section``;
+export const Menu = styled.aside`
+  flex: 1 1 auto;
+  border-left: 2px solid gray;
+  background: #f4f4f4;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: right 0.5s;
+  border: none;
+  z-index: 1;
+  width: 400px;
+  right: -400px;
+
+  ${(props: { isOpen: boolean }) => props.isOpen && `right: 0;`};
+
+  @media (max-width: ${DEVICE_SIZE.mobile.max}) {
+    width: 100vw;
+    right: -100vw;
+    ${(props: { isOpen: boolean }) => props.isOpen && `right: 0;`};
+  }
+`;
