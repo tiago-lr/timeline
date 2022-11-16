@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement } from "react";
 import { Menu, Container, Header, Main, Section, Wrapper } from "./styled-components";
 
 export type Props = {
