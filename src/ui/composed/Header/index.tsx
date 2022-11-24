@@ -28,8 +28,8 @@ const HeaderUI = ({isLoading = false,
                 <span>{location}</span>
             </div>
             <div>
-                <a href={linkedin} target="_blank"><Linkedin size={18} />Linkedin</a>
-                <a href={github} target="_blank"><Github size={18} />Github</a>
+                <a href={linkedin} target="_blank" rel="noopener"><Linkedin size={18} />Linkedin</a>
+                <a href={github} target="_blank" rel="noopener"><Github size={18} />Github</a>
             </div>
         </Info>
     </Wrapper>;
