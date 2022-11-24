@@ -1,4 +1,3 @@
-import { link } from 'fs';
 import React from 'react';
 import { IPersonalData } from '../../../utils/data/profile';
 import Image from '../../singular/Image';
