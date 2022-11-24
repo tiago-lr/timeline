@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   min-width: ${DEVICE_SIZE.mobile.min};
   display: flex;
   flex-flow: row nowrap;
+  background: lavender;
 
   ${(props: { isLoading: boolean }) =>
     props.isLoading &&
@@ -43,8 +44,7 @@ export const Wrapper = styled.div`
 export const Section = styled.section`
   flex: 0 0 auto;
   width: 128px;
-  background: lightgray;
-  border: 2px solid black;
+  background: #232323;
 
   @media (max-width: ${DEVICE_SIZE.tablet.max}) and (min-width: ${DEVICE_SIZE
       .tablet.min}) {
@@ -68,21 +68,15 @@ export const Main = styled.main`
 
 export const Container = styled.div`
   flex: 1 1 auto;
-  background: lavender;
-  border: 2px solid black;
 `;
 
 export const Header = styled.header`
   flex: 0 0 auto;
-  height: 250px;
-  background: lightblue;
-  border: 2px solid black;
 `;
 
 export const Menu = styled.aside`
   flex: 1 1 auto;
-  border-left: 2px solid gray;
-  background: #f4f4f4;
+  background: lightblue;
   position: absolute;
   top: 0;
   height: 100%;
