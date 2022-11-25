@@ -81,7 +81,31 @@ export const Info = styled.div`
   font-weigth: 400;
   ${commonStylesInfo}
 
-  & a {
+  @media (max-width: ${DEVICE_SIZE.mobile.max}) {
+    font-size: 14px;
+  }
+`;
+
+export const InfoData = styled.div`
+  ${commonStylesInfo}
+
+  & > span {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+  }
+
+  @media (max-width: ${DEVICE_SIZE.mobile.max}) {
+    & > span {
+      gap: 4px;
+    }
+  }
+`;
+
+export const InfoLinks = styled.div`
+  ${commonStylesInfo}
+
+  & > a {
     color: white;
     display: flex;
     flex-flow: row nowrap;
@@ -89,40 +113,28 @@ export const Info = styled.div`
     gap: 8px;
   }
 
-  & > div {
-    ${commonStylesInfo}
-  }
-
   @media (max-width: ${DEVICE_SIZE.phablet.max}) {
-    & > div:last-child {
-      flex-flow: row nowrap;
-      justify-content: flex-end;
-      padding-right: 24px;
-      gap: 24px;
-      position: absolute;
-      bottom: -24px;
-      left: 0;
-      right: 0;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    padding-right: 24px;
+    gap: 24px;
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    right: 0;
 
-      & a {
-        color: black;
-      }
+    & > a {
+      color: black;
     }
   }
 
   @media (max-width: ${DEVICE_SIZE.mobile.max}) {
-    & a {
+    bottom: -20px;
+    padding-right: 16px;
+    gap: 16px;
+
+    & > a {
       gap: 4px;
-    }
-
-    & > div {
-      font-size: 14px;
-
-      &:last-child {
-        bottom: -20px;
-        padding-right: 16px;
-        gap: 16px;
-      }
     }
   }
 `;
