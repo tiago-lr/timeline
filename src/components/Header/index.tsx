@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { IPersonalData } from '../../model/profile';
 import { getPersonnalData } from '../../services/profile.service';
 import HeaderUI from '../../ui/composed/Header';
-import { IPersonalData } from '../../utils/data/profile';
 
 const Header = () => {
     const [loading, setLoading] = useState<boolean>(false);

@@ -1,5 +1,4 @@
 import React from 'react';
-import { IPersonalData } from '../../../utils/data/profile';
 import Image from '../../singular/Image';
 import { Info, InfoData, InfoLinks, Wrapper } from './styled-components';
 import { Linkedin } from "@styled-icons/icomoon/Linkedin";
@@ -7,6 +6,7 @@ import { Github } from "@styled-icons/icomoon/Github";
 import { Laptop } from "@styled-icons/icomoon/Laptop";
 import { User } from "@styled-icons/icomoon/User";
 import { Location } from "@styled-icons/icomoon/Location";
+import { IPersonalData } from '../../../model/profile';
 
 
 interface Props extends IPersonalData {
