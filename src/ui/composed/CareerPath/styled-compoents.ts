@@ -4,8 +4,10 @@ import { COLORS, DEVICE_SIZE } from "../../../utils/constants/ui";
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+  overflow: scroll;
   display: flex;
   padding: 24px;
+  gap: 24px;
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
@@ -28,26 +30,29 @@ export const Wrapper = styled.div`
   @media (max-width: ${DEVICE_SIZE.phablet.max}) and (min-width: ${DEVICE_SIZE
       .phablet.min}) {
     padding: 16px 8px;
-
-    & img {
-      width: 60px;
-      height: 60px;
-    }
-  }
-  @media (max-width: ${DEVICE_SIZE.mobile.max}) {
-    overflow: scroll;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    gap: 8px;
-    padding: 8px;
+    gap: 16px;
 
     & img {
       width: 60px;
       height: 60px;
     }
     & > div {
+      gap: 16px;
+    }
+  }
+  @media (max-width: ${DEVICE_SIZE.mobile.max}) {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 8px 12px;
+
+    & img {
+      width: 60px;
+      height: 60px;
+    }
+    & > div {
+      gap: 12px;
       flex-flow: row nowrap;
-      gap: 8px;
     }
   }
 
