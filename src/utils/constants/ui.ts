@@ -6,7 +6,7 @@ export const DEVICE_SIZE = {
 };
 
 export const COLORS = {
-  primary: { light: "", main: "", dark: "" },
-  secondary: { light: "", main: "", dark: "" },
+  primary: { light: "#303030", main: "#232323", dark: "#161616" },
+  secondary: { light: "#ffffff", main: "#f2f2f2", dark: "#e5e5e5" },
   tertiary: { light: "", main: "", dark: "" },
 };

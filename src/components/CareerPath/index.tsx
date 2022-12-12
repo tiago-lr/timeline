@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { IPersonalData } from '../../model/profile';
-import { getPersonnalData } from '../../services/profile.service';
-import HeaderUI from '../../ui/composed/Header';
+import { ILinkedinData,  } from '../../model/profile';
+import { getLinkedinData } from '../../services/profile.service';
+import CareerPathUI from '../../ui/composed/CareerPath';
 
-const Header = () => {
+const CareerPath = () => {
     const [loading, setLoading] = useState<boolean>(false);
-    const [data, setData] = useState<IPersonalData>({
-        name: "",
-        picture: "",
-        background: "",
-        linkedin: "",
-        github: "",
-        location: "",
-        jobTitle: "",
-    });
+    const [data, setData] = useState<ILinkedinData[]>([]);
 
     const loadData = async () => {
         setLoading(true);
     
         try {
-          const response = await getPersonnalData();
+          const response = await getLinkedinData();
     
           if (
             response?.success &&
@@ -38,7 +30,7 @@ const Header = () => {
     loadData();
   }, []);
 
-    return <HeaderUI isLoading={loading} {...data} />;
+    return <CareerPathUI isLoading={loading} data={data} />;
 }
 
-export default Header;
+export default CareerPath;

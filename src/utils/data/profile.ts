@@ -49,6 +49,5 @@ export const linkedinData: ILinkedinData[] = [
 const boardGames = {};
 const videoGames = {};
 const movies = {};
-const linkedin = {};
 const hobbies = {};
 */

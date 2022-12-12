@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DEVICE_SIZE } from "../../utils/constants/ui";
+import { COLORS, DEVICE_SIZE } from "../../utils/constants/ui";
 
 export const Wrapper = styled.div`
   position: relative;
@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   min-width: ${DEVICE_SIZE.mobile.min};
   display: flex;
   flex-flow: row nowrap;
-  background: lavender;
+  background: ${COLORS.secondary.main};
 
   ${(props: { isLoading: boolean }) =>
     props.isLoading &&
@@ -28,9 +28,9 @@ export const Wrapper = styled.div`
         right: 0;
         bottom: 0;
         opacity: 0.5;
-        color: black;
-        background: white;
-        font-size: 40px;
+        color: ${COLORS.primary.dark};
+        background: ${COLORS.secondary.main};
+        font-size: 5rem;
         font-weight: 700;
         z-index: 5;
     }
@@ -44,19 +44,19 @@ export const Wrapper = styled.div`
 export const Section = styled.section`
   flex: 0 0 auto;
   width: 128px;
-  background: #232323;
+  background: ${COLORS.primary.main};
 
   @media (max-width: ${DEVICE_SIZE.tablet.max}) and (min-width: ${DEVICE_SIZE
       .tablet.min}) {
-    width: 80px;
+    width: 104px;
   }
   @media (max-width: ${DEVICE_SIZE.phablet.max}) and (min-width: ${DEVICE_SIZE
       .phablet.min}) {
-    width: 60px;
+    width: 80px;
   }
   @media (max-width: ${DEVICE_SIZE.mobile.max}) {
     width: 100%;
-    height: 60px;
+    height: 80px;
   }
 `;
 
@@ -76,7 +76,7 @@ export const Header = styled.header`
 
 export const Menu = styled.aside`
   flex: 1 1 auto;
-  background: lightblue;
+  background: ${COLORS.secondary.dark};
   position: absolute;
   top: 0;
   height: 100%;

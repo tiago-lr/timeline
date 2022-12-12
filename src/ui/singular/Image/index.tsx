@@ -19,6 +19,7 @@ interface Props {
     source: string;
     size?: IMAGE_SIZE;
     shape?: IMAGE_SHAPE;
+    description?: string;
     isLoading?: boolean;
 };
 
@@ -26,10 +27,11 @@ const Image = ({
     source,
     size,
     shape = IMAGE_SHAPE.circular,
+    description,
     isLoading = false
 }: Props) => {
     console.log("IMAGE: ", isLoading);
-    return <ImageElement src={source} size={size} shape={shape} />;
+    return <ImageElement src={source} size={size} shape={shape} alt={description} title={description} />;
 }
 
 export default Image;

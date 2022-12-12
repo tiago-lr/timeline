@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { IMAGE_SHAPE, IMAGE_SIZE } from ".";
-import { DEVICE_SIZE } from "../../../utils/constants/ui";
+import { COLORS, DEVICE_SIZE } from "../../../utils/constants/ui";
 
 export const ImageElement = styled.img`
-  border: 2px solid white;
+  border: 2px solid ${COLORS.secondary.light};
 
   ${(props: { size?: IMAGE_SIZE; shape: IMAGE_SHAPE }) => `
     border-radius: ${props.shape};
@@ -18,7 +18,7 @@ export const ImageElement = styled.img`
       @media (min-width: ${DEVICE_SIZE.desktop.min}) {
         width: ${IMAGE_SIZE.big};
         height: ${IMAGE_SIZE.big};
-        border: 4px solid white;
+        border: 4px solid ${COLORS.secondary.light};
       }
       @media (max-width: ${DEVICE_SIZE.tablet.max}) and (min-width: ${DEVICE_SIZE.tablet.min}) {
         width: ${IMAGE_SIZE.default};

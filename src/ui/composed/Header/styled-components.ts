@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DEVICE_SIZE } from "../../../utils/constants/ui";
+import { COLORS, DEVICE_SIZE } from "../../../utils/constants/ui";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -57,7 +57,7 @@ export const Wrapper = styled.div`
           right: 0;
           bottom: 0;
           opacity: 0.5;
-          background: white;
+          background: ${COLORS.secondary.main};
           z-index: 5;
       }`;
     }
@@ -76,13 +76,13 @@ const commonStylesInfo = `
 
 export const Info = styled.div`
   height: 100%;
-  color: white;
-  font-size: 18px;
+  color: ${COLORS.secondary.light};
+  font-size: 2.25rem;
   font-weigth: 400;
   ${commonStylesInfo}
 
   @media (max-width: ${DEVICE_SIZE.mobile.max}) {
-    font-size: 14px;
+    font-size: 1.75rem;
   }
 `;
 
@@ -106,7 +106,7 @@ export const InfoLinks = styled.div`
   ${commonStylesInfo}
 
   & > a {
-    color: white;
+    color: ${COLORS.secondary.light};
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -124,7 +124,7 @@ export const InfoLinks = styled.div`
     right: 0;
 
     & > a {
-      color: black;
+      color: ${COLORS.primary.dark};
     }
   }
 
