@@ -3,9 +3,18 @@ import { ILinkedinData,  } from '../../model/profile';
 import { getLinkedinData } from '../../services/profile.service';
 import CareerPathUI from '../../ui/composed/CareerPath';
 
-const CareerPath = () => {
+interface Props {
+    onSelectCompany?: (id: number, title?: string) => void
+};
+
+const CareerPath = ({ onSelectCompany = ()=>{} }: Props) => {
     const [loading, setLoading] = useState<boolean>(false);
     const [data, setData] = useState<ILinkedinData[]>([]);
+
+    const onSelect = (id: number) => {
+        const company = data.find(elem => elem.id === id);
+        onSelectCompany(id, company?.name);
+    }
 
     const loadData = async () => {
         setLoading(true);
@@ -30,7 +39,7 @@ const CareerPath = () => {
     loadData();
   }, []);
 
-    return <CareerPathUI isLoading={loading} data={data} />;
+    return <CareerPathUI isLoading={loading} data={data} onSelect={onSelect}/>;
 }
 
 export default CareerPath;

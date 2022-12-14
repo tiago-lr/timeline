@@ -24,6 +24,8 @@ export const getLinkedinData = async (): Promise<
   return response;
 };
 
+// -------------------------------------------------- MOCK --------------------------------------------------
+
 const getPersonnalDataMock = (): Promise<ResponseType<IPersonalData>> => {
   const response = new Promise<ResponseType<IPersonalData>>(
     (resolve, _reject) => {

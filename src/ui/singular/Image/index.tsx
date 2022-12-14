@@ -30,7 +30,6 @@ const Image = ({
     description,
     isLoading = false
 }: Props) => {
-    console.log("IMAGE: ", isLoading);
     return <ImageElement src={source} size={size} shape={shape} alt={description} title={description} />;
 }
 

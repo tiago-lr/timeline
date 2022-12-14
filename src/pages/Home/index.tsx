@@ -4,12 +4,23 @@ import Header from '../../components/Header';
 import Layout from '../../ui/layout';
 
 const Home = () => {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isPreviewOpen, setIsPreviewOpen] = useState<boolean>(false);
+    const [previewTitle, setPreviewTitle] = useState<string>('');
+    const [previewProps, setPreviewProps] = useState<unknown>();
 
-    return <Layout isMenuOpen={isOpen}
-        section={<CareerPath />}
-        menu={<button onClick={() => setIsOpen(false)}>close</button>}
+    const onSelectCompany = (id: number, title?: string) => {
+        setIsPreviewOpen(true);
+        setPreviewTitle(title || '');
+        setPreviewProps(id);
+    }
+
+    return <Layout
         header={<Header />}
+        menu={<CareerPath onSelectCompany={onSelectCompany} />}
+        isPreviewOpen={isPreviewOpen}
+        previewComponent={<div>{`Content: ${previewProps}`}</div>}
+        previewTitle={previewTitle}
+        onClosePreview={() => setIsPreviewOpen(false)}
     />;
 }
 

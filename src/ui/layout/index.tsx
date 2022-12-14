@@ -1,21 +1,24 @@
 import React, { ReactElement } from "react";
-import { Menu, Container, Header, Main, Section, Wrapper } from "./styled-components";
+import { Menu, Container, Header, Main, Preview, Wrapper } from "./styled-components";
+import { Cross } from "@styled-icons/icomoon/Cross";
 
 export type Props = {
     isLoading?: boolean;
-    isMenuOpen?: boolean;
     header?: ReactElement;
-    main?: ReactElement;
-    section?: ReactElement;
     menu?: ReactElement;
+    main?: ReactElement;
+    isPreviewOpen?: boolean;
+    previewComponent?: ReactElement;
+    previewTitle?: string;
+    onClosePreview?: () => void;
 };
 
-const Layout = ({isLoading = false, isMenuOpen = false, header, main, section, menu}: Props) => {
+const Layout = ({isLoading = false, header, menu, main, isPreviewOpen = false, previewComponent, previewTitle = '', onClosePreview = ()=>{} }: Props) => {
     return (
     <Wrapper isLoading={isLoading}>
-      <Section>
-        {section}
-      </Section>
+      <Menu>
+        {menu}
+      </Menu>
       <Main>
         <Header>
             {header}
@@ -24,9 +27,13 @@ const Layout = ({isLoading = false, isMenuOpen = false, header, main, section, m
             {main}
         </Container>
       </Main>
-      <Menu isOpen={isMenuOpen}>
-        {menu}
-      </Menu>
+      <Preview isOpen={isPreviewOpen}>
+        <div>
+          <button onClick={onClosePreview}><Cross size={18} /></button>
+          <span>{previewTitle}</span>
+        </div>
+        {previewComponent}
+      </Preview>
     </Wrapper>); 
 }
 

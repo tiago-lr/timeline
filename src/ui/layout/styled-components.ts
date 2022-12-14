@@ -41,7 +41,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Section = styled.section`
+export const Menu = styled.section`
   flex: 0 0 auto;
   width: 128px;
   background: ${COLORS.primary.main};
@@ -74,7 +74,7 @@ export const Header = styled.header`
   flex: 0 0 auto;
 `;
 
-export const Menu = styled.aside`
+export const Preview = styled.aside`
   flex: 1 1 auto;
   background: ${COLORS.secondary.dark};
   position: absolute;
@@ -83,8 +83,20 @@ export const Menu = styled.aside`
   transition: right 0.5s;
   border: none;
   z-index: 1;
-  width: 400px;
-  right: -400px;
+  width: 450px;
+  right: -450px;
+
+  & > :first-child {
+    width: 100%;
+    padding: 16px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid ${COLORS.primary.dark};
+  }
 
   ${(props: { isOpen: boolean }) => props.isOpen && `right: 0;`};
 

@@ -9,6 +9,7 @@ export interface IPersonalData {
 }
 
 export interface ILinkedinData {
+  id: number;
   name: string;
   image: string;
 }
